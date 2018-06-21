@@ -6,5 +6,10 @@
 #- Advice
 #  - `gets.chomp` returns a string, so don't forget to use `.to_i` and `.to_s` as needed!
 puts "What is your favorite number?"
-favoriteNum = gets
-puts "But " + (favoriteNum.to_i + 1).to_s+ " is better! This should be your favorite number!"
+favoriteNum = gets.chomp
+puts "But " + (favoriteNum.to_i + 1).to_s+ " is  better! This should be your favorite number!"
+
+you = 'cs61a'
+hello = 'hellooo'
+say = hello
+puts you + ' ' + say
