@@ -14,14 +14,14 @@
 
 puts "Input a starting year: "
 startYear = gets.chomp.to_i
-while startYear < 1000
+while startYear < 0
   puts "Try Again."
   puts "Input a starting year: "
   startYear = gets.chomp.to_i
 end
 puts "Input an ending year: "
 endYear = gets.chomp.to_i
-while endYear < 1000
+while endYear < startYear
   puts "Try Again."
   puts "Input a ending year: "
   endYear = gets.chomp.to_i

@@ -15,23 +15,22 @@
 #    three times, with Grandma pretending not to hear you the first two
 #    times, before giving up and saying goodbye on the third.
 sayBye = false
+byeCounter = 0
 puts "HEY SONNY HOW ARE YOU DOING?"
 while sayBye == false
   input = gets.chomp
   if input == "BYE"
-    puts "WHAT SPEAK UP!!"
-    input = gets.chomp
-    if input == "BYE"
-      puts "WHAT SPEAK UP!!"
-      input = gets.chomp
-      if input == "BYE"
-        puts "GOODBYE SONNY!"
-        sayBye = true
-      end
+    puts "WHAT??? SPEAK UP!!"
+    byeCounter += 1
+    if byeCounter == 3
+      puts "GOODBYE SONNY!"
+      sayBye = true
     end
   elsif input != input.upcase
+    byeCounter = 0
     puts "WHAT?!?! I CAN'T HEAR YOU SPEAK UP SONNY BOY!!"
   else
+    byeCounter = 0
     puts "NO, NOT SINCE " + (1930 + (rand(21))).to_i.to_s + "!"
   end
 end
