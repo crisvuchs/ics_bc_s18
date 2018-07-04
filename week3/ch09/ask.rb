@@ -15,7 +15,10 @@ def ask questions
   while true
     puts questions
     answer = gets.chomp.upcase
-    return answer == "YES"
+    if answer == "YES"
+      return true
+    elsif answer == "NO"
+      return false
     puts "Please answer with yes or no!"
   end
 end
