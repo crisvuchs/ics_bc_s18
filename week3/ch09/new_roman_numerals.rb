@@ -29,16 +29,16 @@ def roman_numeral number
   elsif tens == 4
     romannum = romannum + "XL"
   else
-    romannum = romannum + "L" * (num % 100 / 50)
-    romannum = romannum + "X" * (num % 50 / 10)
+    romannum = romannum + "L" * (number % 100 / 50)
+    romannum = romannum + "X" * (number % 50 / 10)
   end
   if ones == 9
     romannum = romannum + "IX"
   elsif ones == 4
     romannum = romannum + "IV"
   else
-    romannum = romannum + "V" * (num % 10 / 5)
-    romannum = romannum + "I" * (num % 5 / 1)
+    romannum = romannum + "V" * (number % 10 / 5)
+    romannum = romannum + "I" * (number % 5 / 1)
   end
   romannum
 end
