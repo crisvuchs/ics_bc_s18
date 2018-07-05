@@ -1,3 +1,18 @@
+#### english_number.rb
+#- Requirements
+#  - First, put in thousands; it should return 'one thousand' instead of
+#    (the sad) 'ten hundred' and 'ten thousand' instead of 'one hundred
+#    hundred'.
+#  - Now expand upon english_number some more. For example, put in
+#    millions so you get 'one million' instead of 'one thousand thousand'.
+#    Then try adding bil- lions, trillions, and so on.
+#  - We've copy pasted in the base code from the book, all you have to do
+#    is expand on it to have it display 'thousands', 'millions', 'billions',
+#    and 'trillions'.
+#- Clarifications/Advice
+#  - Nothing for this one, just make sure to read it in depth and understand
+#    how it works so you can make the necessary modifications.
+#NOTE: You do not have to do wedding number! That was a joke, really.
 def english_number(number)
   return 'Please enter a number that isn\'t negative.' if number < 0 # No negative numbers.
   return 'zero' if number == 0
@@ -15,6 +30,43 @@ def english_number(number)
   # writing out right now.
   # write and left...get it? :)
   left = number
+
+  write = left / 1000000000000
+  left -= write * 1000000000000
+  if write > 0
+    trillions = english_number write
+    num_string = num_string + trillions + ' trillion'
+    if left > 0
+      num_string += ' '
+    end
+  end
+  write = left / 1000000000
+  left -= write * 1000000000
+  if write > 0
+    billions = english_number write
+    num_string = num_string + billions + ' billion'
+    if left > 0
+      num_string += ' '
+    end
+  end
+  write = left / 1000000
+  left -= write * 1000000
+  if write > 0
+    millions = english_number write
+    num_string = num_string + millions + ' millon'
+    if left > 0
+      num_string += ' '
+    end
+  end
+  write = left / 1000
+  left -= write * 1000
+  if write > 0
+    thousands = english_number write
+    num_string = num_string + thousands + ' thousand'
+    if left > 0
+      num_string += ' '
+    end
+  end
   write = left / 100 # How many hundreds left?
   left -= write * 100 # Subtract off those hundreds.
   if write > 0

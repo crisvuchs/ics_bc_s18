@@ -72,7 +72,7 @@ Make sure to replace the `__` in the call to the function at the bottom to test 
   - We've copy pasted in the base code from the book, all you have to do is expand on it to have it display 'thousands', 'millions', 'billions', and 'trillions'.
 - Clarifications/Advice
   - Nothing for this one, just make sure to read it in depth and understand how it works so you can make the necessary modifications.
-  
+
 NOTE: You do not have to do wedding number! That was a joke, really.
 
 #### 99_bob_eng.rb
