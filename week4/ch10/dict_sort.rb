@@ -1,4 +1,4 @@
-#### dict_sort.rb
+ #### dict_sort.rb
 #- Requirements
 #  - Your sorting algorithm is pretty good, sure. But there was always
 #    that sort of embarrassing point you were hoping I’d just sort of
@@ -14,30 +14,24 @@
 #  - Remember, though, that if I give your program words starting with
 #  capital letters, it should return words with those same capital
 #  letters, just ordered as you’d find in a dictionary.
-def dict_sort(some_array)
-  recursive_dict_sort(some_array, [])
+def dictionary_sort array
+  recursive_dict_sort array, []
 end
-
-def find_min(unsorted)
-  small = unsorted[0]
-  index = 0
-  unsorted.length.times do |i|
-    if unsorted[i].downcase < small.downcase
-      small = unsorted[i]
-      index = i
+def recursive_dict_sort unsort, sort
+  if unsort.length <= 0
+    return sort
+  end
+  small = unsort.pop
+  new_unsort = []
+  unsort.each do |tested_object|
+    if tested_object.downcase < small.downcase
+      new_unsort.push small
+      small = tested_object
+    else
+      new_unsort.push tested_object
     end
   end
-  return small, index
+  sort.push small
+  recursive_dict_sort new_unsort, sort
 end
-
-def recursive_dict_sort(unsorted, sorted)
-  if unsorted.length == 1
-    sorted.push unsorted[0]
-  else
-    small, index = find_min(unsorted)
-    sorted.push small
-    unsorted.delete_at(index)
-    recursive_dict_sort(unsorted, sorted)
-  end
-end
-puts dict_sort(["hello", "goodbye", "pizza", "chocolate", "hang glider", "pretzel", "random stuff"])
+puts dict_sort(["hello", "Goodbye", "pizza", "chocolate", "hang glider", "pretzel", "random stuff", "Google", "Apple"])
