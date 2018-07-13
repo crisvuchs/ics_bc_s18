@@ -34,4 +34,4 @@ def recursive_dict_sort unsort, sort
   sort.push small
   recursive_dict_sort new_unsort, sort
 end
-puts dict_sort(["hello", "Goodbye", "pizza", "chocolate", "hang glider", "pretzel", "random stuff", "Google", "Apple"])
+puts dictionary_sort(["hello", "Goodbye", "pizza", "chocolate", "hang glider", "pretzel", "random stuff", "Google", "Apple"])
