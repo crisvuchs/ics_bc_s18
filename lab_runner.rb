@@ -31,12 +31,12 @@ end
 
 def flush_and_get
 	$stdout.flush
-	input = $stdin.gets
+	input = $stdin.gets.lstrip.rstrip
 	input.nil? || input.chomp! == 'exit' ? save_and_exit() : input
 end
 
 valid_lab_start = 1
-valid_lab_end = 5
+valid_lab_end = 6
 
 if ARGV.length != 1
 	puts 'You must provide a single argument for the number of the lab you want to run.'
