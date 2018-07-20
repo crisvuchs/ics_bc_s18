@@ -1,3 +1,10 @@
+#### baby_dragon.rb
+#- Requirements
+#  - For this one all the methods are already written, all you have to do is
+#    create an interface to interact with your dragon from the terminal
+#- Clarifications/Advice
+#  - Make sure all five methods (feed, walk, rock, toss, put to bed) are
+#    accessible, and you give a way to exit the program gracefully class Dragon
 class Dragon
   def initialize name
     @name = name
@@ -101,5 +108,19 @@ class Dragon
     end
   end
 end
-
-# Make it interactive!
+puts "Welcome to Dragon Simulator! What would you like to name the newly born dragon?"
+name  = gets.chomp
+pet = Dragon.new name
+compare_obj = Object.new
+while true
+  puts
+  puts "Here are the commands you can use to take care of your dragon: feed, toss, walk, rock, put_to_bed, exit."
+  command = gets.chomp
+  if command == "exit"
+    exit
+  elsif pet.respond_to?(command) && !compare_obj.respond_to?(command)
+    pet.send command
+  else
+    puts "This is not a valid command. Please try again."
+  end
+end
